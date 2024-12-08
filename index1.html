@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        background-color: rgb(231, 214, 222);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      table {
+        background-color: antiquewhite;
+        border: 2px solid black;
+        border-radius: 8px;
+        margin-bottom: 250px;
+      }
+
+      input[type="button"] {
+        width: 100%;
+        font-size: 24px;
+        color: rgb(3, 3, 3);
+        font-weight: bold;
+        padding: 20px 40px;
+        border-radius: 8px;
+        background-color: rgb(222, 189, 222);
+      }
+
+      input[type="text"] {
+        width: 78%;
+        font-size: 24px;
+        background-color: rgb(240, 224, 240);
+        padding: 20px 40px;
+        border: none;
+        border-radius: 5px;
+        border: 1px solid black;
+      }
+
+      h1{
+        margin-bottom: 20px;
+        font-size: 46px;
+      }
+
+    </style>
+    
+  </head>
+  <body>
+    
+    <div class="container">
+
+      <h1>Calculator</h1>
+      <table class="table">
+        <tr>
+          <td colspan="3"><input type="text" id="result" /></td>
+          <td><input type="button" id="clear_btn" value="clc" onclick="clearDisplay()" /></td>
+        </tr>
+
+        <tr>
+          <td><input type="button" id="one_btn" value="1" onclick="dis('1')" /></td>
+          <td><input type="button" id="two_btn" value="2" onclick="dis('2')" /></td>
+          <td><input type="button" id="three_btn" value="3" onclick="dis('3')" /></td>
+          <td><input type="button" id="add_btn" value="+" onclick="dis('+')" /></td>
+        </tr>
+
+        <tr>
+          <td><input type="button" id="four_btn" value="4" onclick="dis('4')" /></td>
+          <td><input type="button" id="five_btn" value="5" onclick="dis('5')" /></td>
+          <td><input type="button" id="six_btn" value="6" onclick="dis('6')" /></td>
+          <td><input type="button" id="sub_btn" value="-" onclick="dis('-')" /></td>
+        </tr>
+
+        <tr>
+          <td><input type="button" id="seven_btn" value="7" onclick="dis('7')" /></td>
+          <td><input type="button" id="eight_btn" value="8" onclick="dis('8')" /></td>
+          <td><input type="button" id="nine_btn" value="9" onclick="dis('9')" /></td>
+          <td><input type="button" id="mul_btn" value="" onclick="dis('')" /></td>
+        </tr>
+
+        <tr>
+          <td><input type="button" id="zero_btn" value="0" onclick="dis('0')" /></td>
+          <td><input type="button" id="dot_btn" value="." onclick="dis('.')" /></td>
+          <td><input type="button" id="equal_btn" value="=" onclick="calculate()" /></td>
+          <td><input type="button" id="division_btn" value="/" onclick="dis('/')" /></td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      const display = document.getElementById("result");
+
+      function dis(value) {
+        display.value = display.value + value;
+      }
+
+      function calculate() {
+        try {
+          display.value = eval(display.value); // Evaluates the expression
+        } catch {
+          display.value = "Error";
+        }
+      }
+
+      function clearDisplay() {
+        display.value = "";
+      }
+
+    </script>
+
+  </body>
+</html>
