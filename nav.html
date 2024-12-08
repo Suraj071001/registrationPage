@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NavBar</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .navContainer {
+        margin: 8px;
+        border: 2px solid black;
+        background-color: rgba(192, 144, 198, 0.521);
+        border-radius: 8px;
+      }
+
+      .nav_items {
+        margin: 12px;
+        display: flex;
+        list-style-type: none;
+        justify-content: space-between;
+      }
+
+      .nav_pages {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .login_signup {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        padding-right: 8px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .login_container {
+        padding: 8px;
+        display: flex;
+        justify-content: center;
+      }
+
+    </style>
+
+  </head>
+  <body style="background-color: rgb(228, 218, 225);">
+    <header class="navContainer">
+      <ul class="nav_items">
+
+        <div class="nav_pages">
+          <a href="#"><li>Home</li></a>
+          <a href="#"><li>About</li></a>
+          <a href="#"><li>Shop</li></a>
+          <a href="#"><li>Offers</li></a>
+          <a href="#"><li>Contact</li></a>
+        </div>
+
+        <div class="login_signup">
+          <a href="#">Login</a>
+          <a href="#">Sign up</a>
+        </div>
+      </ul>
+    </header>
+
+  </body>
+</html>
